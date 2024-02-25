@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+html,
+body,
+#root,
+.app {
+    height: 100%;
+    width: 100%;
+    font-family: "Manrope";
+    overflow: hidden;
+}
+
+
+/* fullbackground= #F2F2F2 */
+
+
+/* deepblue=#1B61E4 */
+
+
+/* white #FFFFFF
+ */
+
+::-webkit-scrollbar {
+    width: 0rem;
+    height: 0rem;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 0rem;
+    height: 0rem;
+}
+
+.scrollable-element {
+    overflow: hidden;
+}
+
+.back-btn {
+    display: none;
+}
+
+.primary-btn {}
+
+.input {
+    outline: none;
+    font-family: "Montserrat";
+    padding: 0 .5rem;
+    font-size: 1rem;
+    border-radius: .2rem;
+    border: 1px solid gray;
+}
+
+.input:focus {
+    border: none;
+    outline: 1px solid green;
+}
+
+.half-input {
+    outline: none;
+    font-family: "Montserrat";
+    padding: 0 .5rem;
+    font-size: 1rem;
+    border-radius: .2rem;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.half-input:focus {
+    border-bottom: 1.5px solid green;
+}
+
+.side-grid-box {
+    height: 2.5rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.side-grid-box:hover {
+    background-color: #F6F5FF;
+}
+
+.side-grid-box-active {
+    height: 2.5rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    background-color: #e4e0fe;
+    position: relative;
+    cursor: pointer;
+    transition: all 200ms ease;
+    color: #644DFF;
+}
+
+.side-grid-box-active::after {
+    position: absolute;
+    content: '';
+    width: .2rem;
+    height: 100%;
+    background-color: #644DFF;
+    top: 0;
+    right: 0;
+}
+
+.side-grid-box-logout {
+    height: 2.5rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.side-grid-box-logout:hover {
+    background-color: rgb(255, 205, 186);
+}
+
+.chat-list {
+    cursor: pointer;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+
+.chat-list:hover {
+    background-color: whitesmoke;
+}
+
+.chat-list-active {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.media-btn {
+    border-radius: .4rem;
+    border: 1px solid gray;
+    color: gray;
+    height: 1.75rem;
+    width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.active-media-btn {
+    border-radius: .4rem;
+    border: 1px solid green;
+    height: 1.75rem;
+    width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+.hide-pic {
+    display: none;
+}
+
+.loggedInUser {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.guestUser {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.lu-msg-box-info {
+    background-color: #644DFF;
+    color: white;
+    border-top-right-radius: .75rem;
+    border-top-left-radius: .75rem;
+    border-bottom-left-radius: .75rem;
+}
+
+.gu-msg-box-info {
+    background-color: white;
+    color: black;
+    border-top-right-radius: .75rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: .75rem;
+    border-bottom-right-radius: .75rem;
+}

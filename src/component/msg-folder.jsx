@@ -28,7 +28,7 @@ const MsgFolder = ({data})=>{
 
     const {title, participants} = data
     return (
-        <Box  sx={{width: '100%', borderTop: '1px solid whitesmoke', borderBottom: '1px solid whitesmoke', }}>
+        <Box className={'folder'}  sx={{width: '100%' }}>
             <Grid onClick={handleParticipants} container sx={{width: '100%', height: '2.25rem', p: '0 1.5rem', cursor: 'pointer'}}>
                 <Grid item xs={1} sx={{display: 'flex',justifyContent: 'flex-start', alignItems: 'center',}}><IoFolderOpenOutline size={'1.4rem'} fontWeight={'400'} /></Grid>
                 <Grid item xs={10} sx={{display: 'flex',justifyContent: 'flex-start', alignItems: 'center', width: '100%'}}><Typography variant='h5' noWrap fontWeight='400'>{title}</Typography></Grid>

@@ -14,6 +14,7 @@ import david from '../asset/david.jpg'
 import { RiUserVoiceLine } from "react-icons/ri";
 import { IoVideocamOutline } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
+import { BiEdit } from "react-icons/bi";
 
 export default function ProjectMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -46,11 +47,17 @@ export default function ProjectMenu() {
             'aria-labelledby': 'basic-button',
             }}
         >
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
                 <Typography variant='h5' fontWeight='500' >Edit</Typography>
             </MenuItem>
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
                 <Typography variant='h5' fontWeight='500' >Delete</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Add Participants</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Clear Project</Typography>
             </MenuItem>
 
         </Menu>
@@ -285,5 +292,102 @@ export function ChatMediaMenu() {
             </MenuItem>
         </Menu>
         </>
+    );
+}
+
+
+export function GuestProfile() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    return (
+        <>
+        <div
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+            style={{ padding: '0', display: 'flex', justifyContent: 'flex-end',}}
+        >
+            <Avatar sizes={'8rem'} src={david} sx={{width: '2rem', height: '2rem'}} >User</Avatar>
+        </div>
+        <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+            'aria-labelledby': 'basic-button',
+            }}
+        >
+            <MenuItem onClick={handleClose} sx={{height: 'auto'}} >
+                <Avatar variant='rounded' src={david} sx={{width: '100%', minWidth: '12.5rem', height: '10rem'}} ></Avatar>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{height: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Omolabi Emmanuel</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{height: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500'  >tigerMan</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{height: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500'  >08044907610</Typography>
+            </MenuItem>
+
+        </Menu>
+        </>
+    );
+}
+
+
+export function UserEditBtn() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    return (
+        <div>
+        <div
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+            style={{ padding: '0', display: 'flex', justifyContent: 'flex-end'}}
+        >
+            <BiEdit size={'1.25rem'} color='#F6F5FF' />
+        </div>
+        <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+            'aria-labelledby': 'basic-button',
+            }}
+        >
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Copy </Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Edit </Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Delete </Typography>
+            </MenuItem>
+
+        </Menu>
+        </div>
     );
 }

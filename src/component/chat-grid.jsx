@@ -49,7 +49,7 @@ const ChatGrid = ()=>{
                         <Typography variant='h5' noWarp fontWeight={'500'}>Turbomachine teams </Typography> 
                     </Grid>
                     <Grid item sm={6} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start' , width: '100%',  gap: '.75rem'}}>
-                        <Typography variant='h6' fotnWeight='500'>27 Participants</Typography> <Typography variant='h6' fotnWeight='500' color='#644DFF' >7 online</Typography>                     
+                        <Typography variant='h6' fontWeight='500'>27 Participants</Typography> <Typography variant='h6' fontWeight='500' color='#644DFF' >7 online</Typography>                     
                     </Grid>
                 </Grid>
 
@@ -60,7 +60,7 @@ const ChatGrid = ()=>{
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item sm={10} sx={{width: '100%', heigth: '100%', background: 'whitesmoke', p: '1.5rem',pb: '1rem', overflowY: 'auto'}} >
+            <Grid item sm={10} sx={{width: '100%', heigth: '100%', background: 'whitesmoke', p: ' 0 1.5rem', pb: '1.25rem', overflowY: 'auto'}} >
                 {msg_data.map((data, ind)=>{
                     let value = false
                     let user2 = msg_data.indexOf(data)

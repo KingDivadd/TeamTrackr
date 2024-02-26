@@ -48,16 +48,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const ChatBar = ({data})=>{
     const [clicked, setClicked] = useState([])
 
-    const handleClick = (data)=>{
+    const handleClick = ()=>{
+        setClicked(data);
         console.log(data)
-        let box = []
-        box.push(data)
-        setClicked(box)
-        console.log(clicked)
 
     }
     return (
-        <Grid  className = {clicked.includes(data) ? 'chat-list-active': 'chat-list'} onClick={()=> handleClick(data)} container component='main' sx={{height: '4rem', p: '0 1.5rem',}}>
+        <Grid  className = {clicked === data ? 'chat-list-active': 'chat-list'} onClick={handleClick} container component='main' sx={{height: '4rem', p: '0 1.5rem',}}>
             <Grid item xs={2.5} sx={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start',}}>
                 <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot" >
                     <Avatar alt="Remy Sharp" src={david} size={'5rem'} />

@@ -70,10 +70,10 @@ const TaskGrid = ()=>{
                 </Box>
             </Grid>
             <Grid item sm={10} sx={{width: '100%', heigth: '100%',p: '0 1.5rem', overflowY: 'auto'}}>
-                {[1,2,3,4,5].map((data, ind)=>{
+                {[1,2,3,4,5,6,7,8].map((data, ind)=>{
 
                     return(
-                        <ProjectCard />
+                        <ProjectCard key={ind} />
                     )
                 })}
             </Grid>

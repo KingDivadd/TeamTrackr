@@ -11,7 +11,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 import CircularProgress from '@mui/material/CircularProgress';
 import auth1 from '../asset/auth1.png'
 import david from '../asset/david.jpg'
-import AlertMessage from 'components/snackbar';
+// import AlertMessage from 'components/snackbar';
 
 const RecoverPassword = () => {
     const [credentials, setCredentials] = useState({username: "", password: "", password02: "", code: ''})
@@ -396,7 +396,7 @@ const RecoverPassword = () => {
             
             }
 
-            <AlertMessage />
+            {/* <AlertMessage /> */}
         </Grid>
     );
 }

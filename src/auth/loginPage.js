@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import david from '../asset/david.jpg'
-import AlertMessage from '../components/snackbar'
+// import AlertMessage from '../components/snackbar'
 import auth1 from '../asset/auth1.png'
 
 const Login = () => {
@@ -128,7 +128,7 @@ const Login = () => {
         <Grid container component = "main" sx = {{ height: '100vh', p: '.5rem', backgroundColor: "white",}}>
             {!isSM && <>{!isMD && <Grid item spacing = { '3rem' } xs = { 0 } sm = { 5 } md = { 5 } sx = {{ backgroundImage: `url(${auth1})`, backgroundRepeat: 'no-repeat', backgroundColor: (t) => t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900], backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '1.5rem', p: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-between', }}>
                 <Box> 
-                    <Typography variant = { 'h2' } fontWeight = { '400' } color = { 'white' } > FleetPro </Typography> 
+                    <Typography variant = { 'h2' } fontWeight = { '400' } color = { 'white' } > TeamTrackr </Typography> 
                     <Box sx = {{ width: '100%', mt: '4rem' }}>
                         <Typography variant = { 'h2' } fontWeight = { '600' } color = { 'white' } > Get ready to revolutionizes how you track, schedule, and log </Typography> 
                         <Typography mt = { '1rem' } variant = { 'h6' } fontWeight = { '500' } color = { 'white' } > Start managing your maintenance with our user - friendly app. </Typography> 
@@ -161,7 +161,7 @@ const Login = () => {
 
             {isMD && <Grid item spacing = { '3rem' } xs = { 0 } sm = { 5 } md = { 5 } sx = {{ backgroundImage: `url(${auth1})`, backgroundRepeat: 'no-repeat', backgroundColor: (t) => t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900], backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '1rem', p: '1.75rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-between', }}>
                 <Box> 
-                    <Typography variant = { 'h2' } fontWeight = { '400' } color = { 'white' } > FleetPro </Typography> 
+                    <Typography variant = { 'h2' } fontWeight = { '400' } color = { 'white' } > TeamTrackr </Typography> 
                     <Box sx = {{ width: '100%', mt: '4rem' }}>
                         <Typography variant = { 'h3' } fontWeight = { '500' } color = { 'white' } > Get ready to revolutionizes how you track, schedule, and log </Typography> 
                         <Typography mt = { '1rem' } variant = { 'h6' } fontWeight = { '500' } color = { 'white' } > Start managing your maintenance with our user - friendly app. </Typography> 
@@ -268,7 +268,6 @@ const Login = () => {
                         </Grid> 
                     </Grid> }
 
-                    <AlertMessage / >
             </Grid> 
                         
         </Grid>

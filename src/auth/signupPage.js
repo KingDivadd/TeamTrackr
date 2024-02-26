@@ -4,13 +4,13 @@ import { Box, Typography, useTheme, useMediaQuery } from '@mui/material'
 import { ChatState } from 'context/chatContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import MaintPersonnel, { Assigee, DriverCard } from 'components/role-card';
+// import MaintPersonnel, { Assigee, DriverCard } from 'components/role-card';
 import { AiOutlineRollback } from "react-icons/ai";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import david from "../asset/david.jpg"
 import auth1 from '../asset/auth1.png'
 import auth2 from '../asset/auth2.png'
-import AlertMessage from '../components/snackbar'
+// import AlertMessage from '../components/snackbar'
 import CircularProgress from '@mui/material/CircularProgress';
 
 
@@ -226,9 +226,9 @@ const Signup = () => {
                             <Typography component={"h2"} variant='h2' color={'cornflowerblue'} sx={{fontWeight: '500', mb: 1}}>What are you registering as?</Typography>
                             <Typography component="h5" variant="h4" color= {'black'}> In order to preceed, you need to select your role. </Typography> 
                             <Box sx={{mt: 4, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(13rem, 1fr))', gap: '1.5rem',}}>
-                                <MaintPersonnel onClick={()=> console.log("hello")}  />
+                                {/* <MaintPersonnel onClick={()=> console.log("hello")}  />
                                 <Assigee  onClick={()=> console.log("assignee")} />
-                                <DriverCard onClick={()=> console.log("driver")}  />
+                                <DriverCard onClick={()=> console.log("driver")}  /> */}
                             </Box>
                         </Box>
                     </Grid>
@@ -240,9 +240,9 @@ const Signup = () => {
                             <Typography variant='h3' color={'cornflowerblue'} textAlign={'center'} sx={{fontWeight: '500', mb: 1}}>What are you registering as?</Typography>
                             <Typography fontWeight={'400'} textAlign={'center'} variant="h5" color= {'black'}> In order to preceed, you need to select your role. </Typography> 
                             <Box sx={{mt: 4, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(13rem, 1fr))', gap: '1.5rem',}}>
-                                <MaintPersonnel onClick={()=> console.log("hello")}  />
+                                {/* <MaintPersonnel onClick={()=> console.log("hello")}  />
                                 <Assigee  onClick={()=> console.log("assignee")} />
-                                <DriverCard onClick={()=> console.log("driver")}  />
+                                <DriverCard onClick={()=> console.log("driver")}  /> */}
                             </Box>
                         </Box>
                     </Grid>
@@ -351,7 +351,7 @@ const Signup = () => {
             </>
 
             }
-            <AlertMessage />
+            {/* <AlertMessage /> */}
         </Grid>
     );
 }

@@ -10,16 +10,6 @@ body,
     overflow: hidden;
 }
 
-
-/* fullbackground= #F2F2F2 */
-
-
-/* deepblue=#1B61E4 */
-
-
-/* white #FFFFFF
- */
-
 ::-webkit-scrollbar {
     width: 0rem;
     height: 0rem;
@@ -34,9 +24,7 @@ body,
     overflow: hidden;
 }
 
-.back-btn {
-    display: none;
-}
+.back-btn {}
 
 .primary-btn {}
 

@@ -132,8 +132,8 @@ body,
     border-radius: .4rem;
     border: 1px solid gray;
     color: gray;
-    height: 1.75rem;
-    width: 2.25rem;
+    height: 1.6rem;
+    width: 2.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,8 +143,8 @@ body,
 .active-media-btn {
     border-radius: .4rem;
     border: 1px solid green;
-    height: 1.75rem;
-    width: 2.25rem;
+    height: 1.6rem;
+    width: 2.1rem;
     display: flex;
     align-items: center;
     justify-content: center;

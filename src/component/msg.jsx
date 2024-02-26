@@ -28,8 +28,8 @@ const Msg = ({data, show })=>{
 
     return (
         <>
-        {msgSender ?<Box className={"loggedInUser"} sx={{width: '100%',overflowX: 'hidden', textAlign: 'justify'}}>
-            <Grid  onClick={()=> handleClick(data)} container component='main'  sx={{width: 'auto', maxWidth: '80%', height: 'auto',  mt: '1rem'}} >
+        {msgSender ?<Box className={"loggedInUser"} sx={{width: '100%',overflowX: 'hidden', textAlign: 'justify', mt: '1rem'}}>
+            <Grid  onClick={()=> handleClick(data)} container component='main'  sx={{width: 'auto', maxWidth: '80%', height: 'auto', }} >
                 
                 <Grid className={msgSender ? "lu-msg-box-info" : "gu-msg-box-info"} item sm={12} sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-between', p: '.25rem .5rem', mt: '.35rem'}}>
                     <Box sx={{display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', height: 'fit-content', width: '100%', }}>
@@ -46,11 +46,11 @@ const Msg = ({data, show })=>{
             </Grid>
         </Box>
         :
-        <Box className={"guestUser"} sx={{width: '100%',overflowX: 'hidden', textAlign: 'justify'}}>
-            <Grid  onClick={()=> handleClick(data)} container component='main'  sx={{width: 'auto', maxWidth: '90%', height: 'auto',  mt: '1rem'}} >
+        <Box className={"guestUser"} sx={{width: '100%',overflowX: 'hidden', textAlign: 'justify', mt: '1rem'}}>
+            <Grid  onClick={()=> handleClick(data)} container component='main'  sx={{width: 'auto', maxWidth: '90%', height: 'auto',}} >
                 
                 <Grid className = {"show-pic"} item sm={2} sx={{display: 'flex', alignItems: 'flex-start', justifyContent: 'center',pt: '.25rem', }}>
-                    <Avatar sizes='1rem' src={david} >User</Avatar>
+                    <Avatar sizes={'8rem'} src={david} >User</Avatar>
                 </Grid>
 
                 <Grid className={msgSender ? "lu-msg-box-info" : "gu-msg-box-info"} item sm={10} sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-between', p: '.25rem .5rem', mt: '.35rem'}}>

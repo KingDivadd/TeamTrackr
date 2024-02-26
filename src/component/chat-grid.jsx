@@ -14,6 +14,8 @@ import { CgFolderAdd } from "react-icons/cg";
 import { TfiMicrophone } from "react-icons/tfi";
 import { IoSendOutline } from "react-icons/io5";
 import Msg from './msg';
+import {MsgGridMenu, ChatMediaMenu} from './menu-list'
+
 
 const ChatGrid = ()=>{
     const [sendIcon, setSendIcon] = useState(false)
@@ -51,11 +53,10 @@ const ChatGrid = ()=>{
                     </Grid>
                 </Grid>
 
-                <Grid item sm={2} sx={{display: 'flex', alignItems: 'center', justifyContent :'flex-end', height: '100%'}}>
+                <Grid item sm={2} sx={{display: 'flex', alignItems: 'center', justifyContent :'flex-end', height: '100%', }}>
                     <Box sx={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '.75rem'}}>
-                        <Box className={'media-btn'} ><IoCallOutline  size='1.4rem' /> </Box>
-                        <Box className={'active-media-btn'} ><IoVideocamOutline  size='1.5rem' /> </Box>
-                        <Box sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center',}}><BsThreeDotsVertical size={'1.35rem'} /> </Box>
+                        <ChatMediaMenu />
+                        <Box sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center',}}><MsgGridMenu /> </Box>
                     </Box>
                 </Grid>
             </Grid>

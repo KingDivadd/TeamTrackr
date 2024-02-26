@@ -77,6 +77,9 @@ export default function NewGroup() {
     const isXS = useMediaQuery(theme => theme.breakpoints.down('xs'));
     return (
         <div style={{borderColor: '#FFFFF'}}>
+            <Button variant='contained'>
+                <Typography variant='h5' fontWeight='400' style={{backgroundColor: 'black'}}>Add Project</Typography>
+            </Button>
 
             <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" >
                 <Box sx={style} >
@@ -89,7 +92,7 @@ export default function NewGroup() {
                             </Grid>
                             <Grid item sm={9.5}>
                                 <Box width={'100%'}>
-                                    <Typography variant='h5' mb={'.5rem'} fontWeight='500'>Group Name</Typography>
+                                    <Typography variant='h5' mb={'.5rem'} fontWeight='500'>Project title</Typography>
                                     <input className =  'half-input'  name = { "username" } value = { '' } onChange = {(e) => handleChange(e) } type = "text" style = {{ width: '100%', height: '2rem', background: "white", color: 'black', width: '100%', }}/> 
                                 </Box>
                             </Grid>

@@ -7,13 +7,14 @@ import { ChatState } from 'context/chatContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
-import SideBarGrid from 'component/side-grid';
+import SideBarGrid, { SideBarGridMobile } from 'component/side-grid';
 import MsgGrid from 'component/msg-grid';
 import ChatGrid from 'component/chat-grid';
 import TaskGrid from 'component/task-grid'
 
 const HomePage = ()=>{
     const [width, setWidth] = useState(window.innerWidth)
+    const {side_grid, setSide_grid} = ChatState()
 
     const resize = ()=>{
         setWidth(window.innerWidth)
@@ -31,7 +32,7 @@ const HomePage = ()=>{
     const isSM = useMediaQuery(theme => theme.breakpoints.down('sm'));
     const isXS = useMediaQuery(theme => theme.breakpoints.down('xs'));
     return (
-        <Grid container component='main' sx={{p: '.25rem', height: '100vh', overflow: 'auto', background: '#FFFFFF'}}>
+        <Grid container component='main' sx={{p: '.25rem', height: '100vh', overflow: 'auto', background: '#FFFFFF', position: 'relative'}}>
             {width > 900 &&
             <>
                 {width > 1250 ? 
@@ -65,6 +66,7 @@ const HomePage = ()=>{
             
             
             {width > 1199 && <Grid item xs={12} sm={3} md={0}  lg={3} sx={{width: '100%', height: '100%'}} > <TaskGrid /> </Grid>}
+            {side_grid && <SideBarGridMobile />}
         </Grid>
     )
 }

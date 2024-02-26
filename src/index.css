@@ -183,3 +183,34 @@ body,
     border-bottom-left-radius: .75rem;
     border-bottom-right-radius: .75rem;
 }
+
+.side-grid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12rem;
+    background-color: red;
+    animation: hide 200ms linear forwards
+}
+
+@keyframes hide {
+    100% {
+        left: -20rem;
+    }
+}
+
+.active-side-grid {
+    position: absolute;
+    left: -20rem;
+    top: 0;
+    width: 12rem;
+    background: white;
+    z-index: 2;
+    animation: show 200ms linear forwards
+}
+
+@keyframes show {
+    100% {
+        left: 0rem;
+    }
+}

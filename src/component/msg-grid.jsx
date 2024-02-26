@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material'
+import { Box,Button, Typography, useTheme, useMediaQuery } from '@mui/material'
 import { ChatState } from 'context/chatContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
@@ -14,7 +14,7 @@ import { CiSearch } from "react-icons/ci";
 import david from '../asset/david.jpg'
 import { PiCaretUp } from "react-icons/pi";
 import { PiCaretDown} from "react-icons/pi";
-import { IoFolderOpenOutline } from "react-icons/io5";
+import { IoFolderOpenOutline, IoMenu } from "react-icons/io5";
 import ChatBar from './chat-bar';
 import MsgFolder from './msg-folder'
 
@@ -49,16 +49,54 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 const MsgGrid = ()=>{
+    const [width, setWidth] = useState(window.innerWidth)
+    const {side_grid, setSide_grid} = ChatState()
+
+    useEffect(()=>{
+        
+    }, [])
+    const resize = ()=>{
+        setWidth(window.innerWidth)
+    }
+    useEffect(()=>{
+
+        window.addEventListener('resize', resize)
+        return()=>{
+            window.removeEventListener('resize', resize)
+        }
+    }, [width])
     
+    const handleGrid = ()=>{
+        if(side_grid){
+            setSide_grid(false)
+        }
+        if(!side_grid){
+            setSide_grid(true)
+        }
+    }
+
+    const handleHideSideGrid = ()=>{
+        if(side_grid){
+            setSide_grid(false)
+        }
+    }
 
     return (
-        <Grid component={'main'} container direction={'column'} sx={{width: '100%', height: '100%', borderRight: '1px solid #F6F5FF'}}>
-            <Grid item xs={1} sx={{width: '100%', heigth: '100%', display: 'flex', alignItems: 'center', p: '0 1.5rem'}} >
+        <Grid component={'main'} onClick={handleHideSideGrid} container direction={'column'} sx={{width: '100%', height: '100%', borderRight: '1px solid #F6F5FF'}}>
+            {width > 699 ? <Grid item xs={1} sx={{width: '100%', heigth: '100%', display: 'flex', alignItems: 'center', p: '0 1.5rem'}} >
                 <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '2.5rem'}}>
                     <Typography variant='h4' fontWeight={'500'}>Messages</Typography>
                     <BiMessageSquareEdit size={'1.5rem'} color={'#644DFF'} />
                 </Box>
             </Grid>
+            :
+            <Grid item xs={1} sx={{width: '100%', heigth: '100%', display: 'flex', alignItems: 'center', p: '0 1.5rem'}} >
+                <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '2.5rem'}}>
+                    <Button variant='text' onClick={handleGrid} style={{display: 'flex', justifyContent: 'flex-start', width :'0', padding: '0',}} ><IoMenu size={'1.75rem'} color={'#644DFF'} /> </Button>
+                    <Typography variant='h4' fontWeight={'500'} sx={{ml: '-2rem'}}>Messages</Typography>
+                    <BiMessageSquareEdit size={'1.5rem'} color={'#644DFF'} />
+                </Box>
+            </Grid>}
             <Grid item xs={1} sx={{width: '100%', heigth: '100%',display: 'flex', alignItems: 'flex-start', p: '0 1.5rem'}} >
                 <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', width:'100%', background: 'whitesmoke', gap: '.5rem', borderRadius: '.3rem'}}>
                     <input className='input' placeholder='Search...' type="text" style={{backgroundColor: 'whitesmoke',outline: 'none', border: 'none', height:'2.25rem', width: '100%'}} />

@@ -14,9 +14,10 @@ export const ChatProvider = ({children})=>{
     const [alertSeverity, setAlertSeverity] = useState('warning')
     const [createGroup, setCreateGroup] = useState(false)
     const [openMenu, setOpenMenu] = useState(false)
+    const [side_grid, setSide_grid] = useState(false)
 
     return <ChatContext.Provider 
-            value={{mode, setMode,userInfo, setUserInfo, isAuth, persistData, setPersistData, setIsAuth, openMenu, setOpenMenu, createGroup, setCreateGroup }}
+            value={{mode, setMode,userInfo, setUserInfo, isAuth, persistData, setPersistData, setIsAuth, openMenu, setOpenMenu, createGroup, setCreateGroup, side_grid, setSide_grid }}
             >
             {children}
         </ChatContext.Provider>

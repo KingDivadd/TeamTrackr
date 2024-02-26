@@ -92,8 +92,8 @@ const MsgGrid = ()=>{
             :
             <Grid item xs={1} sx={{width: '100%', heigth: '100%', display: 'flex', alignItems: 'center', p: '0 1.5rem'}} >
                 <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '2.5rem'}}>
-                    <Button variant='text' onClick={handleGrid} style={{display: 'flex', justifyContent: 'flex-start', width :'0', padding: '0',}} ><IoMenu size={'1.75rem'} color={'#644DFF'} /> </Button>
-                    <Typography variant='h4' fontWeight={'500'} sx={{ml: '-2rem'}}>Messages</Typography>
+                    <Box  onClick={handleGrid} style={{display: 'flex', justifyContent: 'flex-start', width :'1.5rem'}} ><IoMenu size={'1.75rem'} color={'#644DFF'} /> </Box>
+                    <Typography variant='h4' fontWeight={'500'} sx={{ml: '-1rem'}}>Messages</Typography>
                     <BiMessageSquareEdit size={'1.5rem'} color={'#644DFF'} />
                 </Box>
             </Grid>}

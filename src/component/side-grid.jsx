@@ -84,13 +84,16 @@ export default SideBarGrid
 export const SideBarGridMobile = ()=>{
     const {side_grid, setSide_grid} = ChatState()
 
+    useEffect(()=>{
+    }, [side_grid])
+
     return (
-        <Grid className = {side_grid? "active-side-grid": "side-grid"} component={'main'} container direction={'column'} sx={{width: '17rem', height: '100vh', borderTopLeftRadius: '.3rem', borderBottomLeftRadius: '.3rem',borderRight: '1px solid #644DFF' }}>
+        <Grid className = {side_grid? "active-side-grid": "side-grid"} component={'main'} container direction={'column'} sx={{width: '17rem', height: '100vh', borderTopLeftRadius: '.3rem', borderBottomLeftRadius: '.3rem', background: '#F6F5FF' }}>
             <Grid item xs={1} sx={{width: '100%', heigth: '100%', display: 'flex',alignItems: 'center', pl: '1.5rem'}} >
                 <Typography variant='h3' fontWeight={'700'} color='#644DFF'> T</Typography><Typography variant='h3' fontWeight={'700'} >eam</Typography><Typography variant='h3' fontWeight={'700'} color={'#644DFF'}>Trackr</Typography>
             </Grid>
             
-            <Grid item xs={10} sx={{width: '100%', heigth: '100%',  pt: '4rem'}} >
+            <Grid item xs={9.5} sx={{width: '100%', heigth: '100%',  pt: '4rem'}} >
                 <Box sx={{display: 'flex',flexDirection: 'column',justifyContent: 'flex-start', gap: '.25rem', alignItems: 'flex-start', width: '100%',}}>
                     <Box className={'side-grid-box'} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '.75rem'}}>
                         <TbSmartHome size={'1.5rem'} />
@@ -118,8 +121,8 @@ export const SideBarGridMobile = ()=>{
                     </Box>
                 </Box>
             </Grid>
-            <Grid item xs={1} sx={{width: '100%', heigth: '100%', display: 'flex', alignItems: 'center'}} >
-                <Box className={'side-grid-box-logout'} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '.75rem', }}>
+            <Grid item xs={1.5} sx={{width: '100%', heigth: '100%', display: 'flex', alignItems: 'flex-start'}} >
+                <Box className={'side-grid-box-logout'} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '.75rem', }}>
                         <IoIosLogOut size={'1.4rem'} />
                         <Typography variant='h5' fontWeight={'500'} >Log out</Typography>
                     </Box>

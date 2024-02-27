@@ -14,7 +14,7 @@ import { BsBell } from "react-icons/bs";
 import david from '../asset/david.jpg'
 import { IoAddOutline } from "react-icons/io5";
 import { themeSettings } from 'theme';
-import ProjectCard from './card';
+import FriendRequestCard, {GroupRequestCard, ChatInfoCard} from './card';
 import {ProfilePix} from './menu-list'
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -60,7 +60,7 @@ const TaskGrid = ()=>{
                     <ProfilePix />
                 </Box>
             </Grid>
-            <Grid item sm={1} sx={{width: '100%', heigth: '100%',  p: '0 1.5rem'}} >
+            {/* <Grid item sm={1} sx={{width: '100%', heigth: '100%',  p: '0 1.5rem'}} >
                 <Box sx={{height: '100%', display: 'flex', justifyContent:'space-between', alignItems: 'center' }}>
                     <Typography variant='h4' fontWeight={'500'}>Timeline</Typography>
                     <Button variant={'contained'} style={{ backgroundColor: "black", fontSize: "18px", textTransform: 'none' }}>
@@ -68,14 +68,11 @@ const TaskGrid = ()=>{
                         <IoAddOutline size={'1.5rem'} color='white' /> 
                     </Button>
                 </Box>
-            </Grid>
-            <Grid item sm={10} sx={{width: '100%', heigth: '100%',p: '0 1.5rem', overflowY: 'auto'}}>
-                {[1,2,3,4,5,6,7,8].map((data, ind)=>{
-
-                    return(
-                        <ProjectCard key={ind} />
-                    )
-                })}
+            </Grid> */}
+            <Grid item sm={11} sx={{width: '100%', heigth: '100%',p: '0 1.5rem', overflowY: 'auto',}}>
+                <ChatInfoCard />
+                <FriendRequestCard />
+                <GroupRequestCard />
             </Grid>
         </Grid>
     )

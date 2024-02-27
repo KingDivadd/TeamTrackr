@@ -13,7 +13,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { BiMessageSquareEdit } from "react-icons/bi";
 import { CiSearch } from "react-icons/ci";
 import david from '../asset/david.jpg'
-
+import {ChatInfoUserEditBtn} from './menu-list'
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -84,3 +84,33 @@ const ChatBar = ({data})=>{
 }
 
 export default ChatBar
+
+
+export const ChatMemberBar = ({data})=>{
+
+    return(
+        <Grid container sx={{borderBottom: '1px solid whitesmoke', mb: '.5rem'}}>
+            <Grid item xs={3} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center',}}>
+                <Box sx={{p: '.25rem', background: '#F6F5FF', borderRadius: '100%'}}> 
+                    {(data  % 2) === 1 ? <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot" >
+                        <Avatar alt="Remy Sharp" src={david} sx={{width: '2.75rem', height: '2.75rem'}}>I D</Avatar>
+                    </StyledBadge> :
+                    <Avatar variant='circular' src={david} sx={{width: '2.75rem', height: '2.75rem'}}>I D</Avatar>}
+                </Box>
+            </Grid>
+            <Grid item container xs={9} direction={'column'} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                <Grid item container xs={6} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-end', width: '100%'}}> 
+                    <Grid item xs={11} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-end', width: '100%'}}>
+                        <Typography variant='h5' noWarp fontWeight={'500'}>Emmanuel</Typography>
+                    </Grid>
+                    <Grid item xs={1} sx={{display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', width: '100%'}}>
+                        <ChatInfoUserEditBtn /> 
+                    </Grid>
+                </Grid>
+                <Grid item xs={6} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%'}}>
+                    <Typography variant='h5' fontWeight={'500'}>Available</Typography> 
+                </Grid>
+            </Grid>
+        </Grid>
+    )
+}

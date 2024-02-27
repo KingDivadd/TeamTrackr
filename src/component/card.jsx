@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import {Box, CircularProgress, Grid, Button} from '@mui/material';
 import Card from '@mui/material/Card';
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
@@ -16,10 +18,10 @@ import { useMediaQuery } from '@mui/material';
 import { CiEdit } from "react-icons/ci";
 import { PiCaretUp } from "react-icons/pi";
 import { PiCaretDown} from "react-icons/pi";
-import ProjectMenu from "./menu-list";
+import ProjectMenu, { ChatInfoUserEditBtn } from "./menu-list";
 import { GoPersonAdd } from "react-icons/go";
 import { IoAdd } from "react-icons/io5";
-import {RequestMenu} from './menu-list'
+import {RequestMenu, GrpRequestMenu} from './menu-list'
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import david from '../asset/david.jpg'
 import { MdPeopleAlt } from "react-icons/md";
@@ -28,6 +30,37 @@ import { IoVideocamOutline } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 import {ChatMemberBar} from "./chat-bar"
+
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+    '& .MuiBadge-badge': {
+        backgroundColor: '#44b700',
+        color: '#44b700',
+        boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+        '&::after': {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        borderRadius: '50%',
+        animation: 'ripple 1.2s infinite ease-in-out',
+        border: '1px solid currentColor',
+        content: '""',
+        },
+    },
+    '@keyframes ripple': {
+        '0%': {
+        transform: 'scale(.8)',
+        opacity: 1,
+        },
+        '100%': {
+        transform: 'scale(2.4)',
+        opacity: 0,
+        },
+    },
+}));
+
 
 export default function FriendRequestCard() {
     const [showDrop, setShowDrop] = useState(false)
@@ -53,13 +86,25 @@ export default function FriendRequestCard() {
                     {[1,2,3,4,5].map((data, ind)=>{
 
                         return (
-                            <Grid container width={'100%'} sx={{mb: '.25rem', borderBottom: '1px solid whitesmoke'}}>
-                                <Grid item xs={10} sx={{p: '.25rem 0'}}>
-                                    <Typography variant='h5' fontWeight='500'>Omolabi Adeniyi sent you a friend request</Typography>
+                            <Grid container sx={{borderBottom: '1px solid whitesmoke', mb: '.5rem'}}>
+                                <Grid item xs={2.5} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center',}}>
+                                        {(data  % 2) === 1 ? <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot" >
+                                            <Avatar alt="Remy Sharp" src={david} sx={{width: '2.75rem', height: '2.75rem'}}>I D</Avatar>
+                                        </StyledBadge> :
+                                        <Avatar variant='circular' src={david} sx={{width: '2.75rem', height: '2.75rem'}}>I D</Avatar>}
                                 </Grid>
-                                <Grid item xs={2} sx={{display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-end', p: '.25rem 0'}}>
-                                    <RequestMenu />
+                                <Grid item container xs={8.5} direction={'column'} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                    <Grid item container xs={6} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-end', width: '100%'}}> 
+                                        <Grid item xs={11} sx={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-end', width: '100%'}}>
+                                            <Typography variant='h5' noWarp fontWeight={'400'}>Emmanuel sent you a friend request</Typography>
+                                        </Grid>
+                                    </Grid>
+                                    
                                 </Grid>
+                                <Grid item xs={1} sx={{display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start', width: '100%'}}>
+                                    <RequestMenu /> 
+                                </Grid>
+                                
                             </Grid>
                         )
                     })}
@@ -105,11 +150,14 @@ export function GroupRequestCard() {
 
                         return (
                             <Grid container width={'100%'} sx={{mb: '.25rem', borderBottom: '1px solid whitesmoke'}}>
-                                <Grid item xs={10} sx={{p: '.25rem 0'}}>
-                                    <Typography variant='h5' fontWeight='500'  sx={{pb: '.25rem'}} >You've been invited to join Playing Group </Typography> 
+                                <Grid item xs={2.5} sx={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start',}}>
+                                    <Avatar alt="Remy Sharp" src={david} sx={{width: '2.75rem', height: '2.75rem'}}>I D</Avatar>
                                 </Grid>
-                                <Grid item xs={2} sx={{display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-end', p: '.25rem 0'}}>
-                                    <RequestMenu />
+                                <Grid item xs={8.5} sx={{p: '.25rem 0'}}>
+                                    <Typography variant='h5' fontWeight='400'  sx={{pb: '.25rem'}} >You've been invited to join Playing Group </Typography> 
+                                </Grid>
+                                <Grid item xs={1} sx={{display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-end', p: '.25rem 0'}}>
+                                    <GrpRequestMenu />
                                 </Grid>
                             </Grid>
                         )

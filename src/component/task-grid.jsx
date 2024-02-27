@@ -69,7 +69,7 @@ const TaskGrid = ()=>{
                     </Button>
                 </Box>
             </Grid> */}
-            <Grid item sm={11} sx={{width: '100%', heigth: '100%',p: '0 1.5rem', overflowY: 'auto',}}>
+            <Grid item sm={11} sx={{width: '100%', heigth: '100%',p: '.5rem 1.5rem', overflowY: 'auto',}}>
                 <ChatInfoCard />
                 <FriendRequestCard />
                 <GroupRequestCard />

@@ -156,6 +156,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         },
     },
 }));
+
 export function ProfilePix() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -412,7 +413,7 @@ export function RequestMenu() {
             onClick={handleClick}
             style={{ padding: '0', display: 'flex', justifyContent: 'flex-end'}}
         >
-            <CiEdit color='black' size={'1.4rem'} />
+            <PiDotsThreeVerticalBold color='gray' size={'1.4rem'} />
         </div>
         <Menu
             id="basic-menu"
@@ -480,6 +481,102 @@ export function ChatInfoUserEditBtn() {
                 <Typography variant='h5' fontWeight='500' >Remove</Typography>
             </MenuItem>
 
+        </Menu>
+        </div>
+    );
+}
+
+
+export function GrpRequestProfile() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    return (
+        <>
+        <div
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+            style={{ padding: '0', display: 'flex', justifyContent: 'flex-end', }}
+        >
+            <Typography variant='h5' fontWeight='500' >Veiw Profile</Typography>
+        </div>
+        <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+            'aria-labelledby': 'basic-button',
+            }}
+        >
+            <MenuItem onClick={handleClose} sx={{height: 'auto'}} >
+                <Avatar  alt="Remy Sharp" variant='rounded' src={david} sx={{width: '100%', minWidth: '12.5rem', height: '10rem'}} ></Avatar>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{height: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Playing Group</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{minHeight: '2.25', maxWidth: '14rem'}} >
+                <Typography variant='h5' noWrap fontWeight='400' >Introduction to web 3 technologies and airdrops</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{height: '2.25rem', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '.5rem'}} >
+                <Typography variant='h5' fontWeight='400'  >27 participants</Typography>
+                <Typography variant='h5' fontWeight='400' color={'#644DFF'}  >5 Online</Typography>
+            </MenuItem>
+
+        </Menu>
+        </>
+    );
+}
+
+export function GrpRequestMenu() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    return (
+        <div>
+        <div
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+            style={{ padding: '0', display: 'flex', justifyContent: 'flex-end'}}
+        >
+            <PiDotsThreeVerticalBold color='gray' size={'1.4rem'} />
+        </div>
+        <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+            'aria-labelledby': 'basic-button',
+            }}
+        >
+            <MenuItem  sx={{heigh: '2.25rem'}} >
+                <GrpRequestProfile />
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Join Group</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={{heigh: '2.25rem'}} >
+                <Typography variant='h5' fontWeight='500' >Delete</Typography>
+            </MenuItem>
         </Menu>
         </div>
     );
